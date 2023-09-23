@@ -28,9 +28,9 @@ const supportedWallets: Wallet[] = [
       return await getInjectedConnector()
     },
     // Removed for now to allow all kinds of injected wallets to connect using the metamask button
-    // providerCheck: () => {
-    //   return !!(window as any).ethereum && !!(window as any).ethereum['isMetaMask']
-    // },
+    providerCheck: () => {
+      return !!(window as any).ethereum && !!(window as any).ethereum['isMetaMask']
+    },
   },
   {
     key: 'walletconnect',
